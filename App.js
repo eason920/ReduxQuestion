@@ -4,9 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // REDUX v
-// import configureStore from "./src/redux/store";
-// import { StoreContext } from "redux-react-hook";
-// const store = configureStore();
+import configureStore from "./src/redux/store";
+import { StoreContext } from "redux-react-hook";
+const store = configureStore();
 
 // SCREEN v
 import ProfileScreen from "./src/screens/ProfileScreen";
@@ -24,7 +24,8 @@ const ProfileGroup = () => (
   </Stack.Navigator>
 );
 
-export default function App() {
+// export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -45,11 +46,11 @@ export default function App() {
   );
 }
 
-// export default function MyApp() {
-//   <StoreContext.Provider value={store}>
-//     <App />
-//   </StoreContext.Provider>
-// }
+export default function MyApp() {
+  <StoreContext.Provider value={store}>
+    <App />
+  </StoreContext.Provider>
+}
 
 const styles = StyleSheet.create({
   container: {

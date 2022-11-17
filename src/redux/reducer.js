@@ -1,10 +1,10 @@
 import { CHANGE_NAME } from "./action";
 
-const initalState = {
+const initialState = {
   newName: "YourName",
 };
 
-export default function reducer(state = initalState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_NAME:
       return {
